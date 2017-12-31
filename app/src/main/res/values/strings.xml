@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Pianino</string>
+    <string name="desc_tit_pianino">Título pianino</string>
 </resources>

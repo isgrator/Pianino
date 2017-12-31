@@ -2,17 +2,116 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contenedor_principal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/paisaje"
+    android:padding="@dimen/margen_tit_pianino"
     tools:context="org.imgt.pianino.Principal">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="95dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tit_pianino"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/ico_settings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/settings"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ico_teclado"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/ico_teclado"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/ico_teclado"
+            app:layout_constraintBottom_toBottomOf="@+id/ico_settings"
+            app:layout_constraintEnd_toStartOf="@+id/ico_animales"
+            app:layout_constraintStart_toEndOf="@+id/ico_settings"
+            app:layout_constraintTop_toTopOf="@+id/ico_settings"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/ico_animales"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/ico_gato"
+            app:layout_constraintBottom_toBottomOf="@+id/ico_settings"
+            app:layout_constraintEnd_toStartOf="@+id/ico_colores"
+            app:layout_constraintStart_toEndOf="@+id/ico_teclado"
+            app:layout_constraintTop_toTopOf="@+id/ico_teclado"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/ico_colores"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/ico_colores"
+            app:layout_constraintBottom_toBottomOf="@+id/ico_settings"
+            app:layout_constraintEnd_toStartOf="@+id/ico_scores"
+            app:layout_constraintStart_toEndOf="@+id/ico_animales"
+            app:layout_constraintTop_toTopOf="@+id/ico_animales"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/ico_scores"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/scores"
+            app:layout_constraintBottom_toBottomOf="@+id/ico_settings"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ico_colores"
+            app:layout_constraintTop_toTopOf="@+id/ico_animales"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/tit_pianino"
+        android:layout_width="0dp"
+        android:layout_height="116dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/desc_tit_pianino"
+        android:src="@drawable/pianino"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="@dimen/vertical_bias" />
 
 </android.support.constraint.ConstraintLayout>
