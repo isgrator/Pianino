@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:key="preferencias_principal">
+    <PreferenceCategory android:title="@string/cat_jugador">
+
+        <EditTextPreference
+
+            android:hint="@string/tu_nombre"
+            android:key="nombrejugador"
+            android:selectAllOnFocus="true"
+            android:singleLine="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/cat_juego">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="musicaonoff"
+            android:title="@string/musica" />
+        <!--<SwitchPreference
+            android:background="@null"
+            android:defaultValue="true"
+            android:key="sonidosonoff"
+            android:title="@string/sonido" />-->
+
+        <ListPreference
+
+            android:defaultValue="1"
+            android:entries="@array/gradoDificultad"
+            android:entryValues="@array/gradoDificultadValores"
+            android:key="dificultad"
+            android:title="@string/dificultad" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

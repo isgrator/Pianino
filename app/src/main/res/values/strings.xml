@@ -1,4 +1,24 @@
 <resources>
     <string name="app_name">Pianino</string>
     <string name="desc_tit_pianino">Título pianino</string>
+    <string name="desc_scores">Icono puntuaciones</string>
+    <string name="desc_animales">Icono animales</string>
+    <string name="desc_teclado">Icono teclado</string>
+    <string name="desc_colores">Icono colores</string>
+    <string name="desc_settings">Icono configuración</string>
+    <string name="tit_pref_nombre">Preferencia de nombre</string>
+    <string name="como_llamas">¡Hola! ¿Cómo te llamas?</string>
+    <string name="tu_nombre">Me llamo ...</string>
+    <string name="a_jugar">¡A jugar!</string>
+    <string name="dificultad_facil">Fácil</string>
+    <string name="dificultad_normal">Normal</string>
+    <string name="dificultad_dificil">Difícil</string>
+    <string name="musica">Música ON/OFF</string>
+    <string name="sonido">Sonidos ON/OFF</string>
+    <string name="dificultad">Dificultad</string>
+    <string name="configuracion">Configuración</string>
+    <string name="cat_jugador">Jugador</string>
+    <string name="cat_juego">Juego</string>
+    <string name="falta_nombre">¡Escribe tu nombre!</string>
+    <string name="hola">¡Hola</string>
 </resources>

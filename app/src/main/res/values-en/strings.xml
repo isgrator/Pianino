@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="desc_tit_pianino">Pianino title</string>
+    <string name="desc_scores">Scores icon</string>
+    <string name="desc_animales">Animals icon</string>
+    <string name="desc_teclado">Keyboard icon</string>
+    <string name="desc_colores">Colors icon</string>
+    <string name="desc_settings">Settings Icon</string>
+    <string name="tit_pref_nombre">Preferencia de nombre</string>
+    <string name="como_llamas">Hi! What\'s your name?</string>
+    <string name="tu_nombre">My name is ...</string>
+    <string name="a_jugar">Let\'s play!</string>
+    <string name="dificultad_facil">Easy</string>
+    <string name="dificultad_normal">Normal</string>
+    <string name="dificultad_dificil">Hard</string>
+    <string name="musica">Music ON/OFF</string>
+    <string name="sonido">Sounds ON/OFF</string>
+    <string name="dificultad">Difficulty</string>
+    <string name="configuracion">Settings</string>
+    <string name="cat_jugador">Player</string>
+    <string name="cat_juego">Game</string>
+    <string name="falta_nombre">Write your name!</string>
+    <string name="hola">Hi</string>
 </resources>
