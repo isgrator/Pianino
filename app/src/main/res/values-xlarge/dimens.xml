@@ -7,7 +7,8 @@
     <dimen name="tamanyo_letra">52sp</dimen>
     <dimen name="tamanyo_letra_config">46sp</dimen>
     <dimen name="tamanyo_letra_piano">46sp</dimen>
-    <dimen name="comienzo_guia1_piano">291dp</dimen>
+    <!--<dimen name="comienzo_guia1_piano">291dp</dimen>-->
+    <dimen name="comienzo_guia1_piano">397dp</dimen>
     <dimen name="comienzo_guia2_piano">280dp</dimen>
     <dimen name="margen_piano">64dp</dimen>
     <dimen name="piano_padding_bottom">0dp</dimen>

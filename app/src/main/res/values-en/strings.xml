@@ -13,8 +13,11 @@
     <string name="dificultad_facil">Easy</string>
     <string name="dificultad_normal">Normal</string>
     <string name="dificultad_dificil">Hard</string>
-    <string name="musica">Music ON/OFF</string>
+    <string name="musica">Music OFF/ON</string>
     <string name="sonido">Sounds ON/OFF</string>
+    <string name="modo">Default sound Voice/Piano</string>
+    <string name="modo_piano">Piano</string>
+    <string name="modo_solfeo">Sol-fa</string>
     <string name="dificultad">Difficulty</string>
     <string name="configuracion">Settings</string>
     <string name="cat_jugador">Player</string>
@@ -28,4 +31,10 @@
     <string name="SOL">SOL</string>
     <string name="LA">LA</string>
     <string name="SI">SI</string>
+    <string name="descr_instrumento_piano">Piano sound</string>
+    <string name="descr_sonido_voz">Voice sound</string>
+    <string name="descr_boton_jugar">Play button</string>
+    <string name="desc_mensajes">Messages box</string>
+    <string name="descr_personaje">Character to show current Pianino\'s mode</string>
+    <string name="descr_pentagrama">pentagram</string>
 </resources>

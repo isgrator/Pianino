@@ -13,8 +13,11 @@
     <string name="dificultad_facil">Fácil</string>
     <string name="dificultad_normal">Normal</string>
     <string name="dificultad_dificil">Difícil</string>
-    <string name="musica">Música ON/OFF</string>
+    <string name="musica">Música OFF/ON</string>
     <string name="sonido">Sonidos ON/OFF</string>
+    <string name="modo">Sonido por defecto Voz/Piano</string>
+    <string name="modo_piano">Piano</string>
+    <string name="modo_solfeo">Solfeo</string>
     <string name="dificultad">Dificultad</string>
     <string name="configuracion">Configuración</string>
     <string name="cat_jugador">Jugador</string>
@@ -28,4 +31,10 @@
     <string name="SOL">SOL</string>
     <string name="LA">LA</string>
     <string name="SI">SI</string>
+    <string name="descr_instrumento_piano">Sonido de piano</string>
+    <string name="descr_sonido_voz">Sonido de voz</string>
+    <string name="descr_boton_jugar">Botón jugar</string>
+    <string name="desc_mensajes">Texto de mensajes</string>
+    <string name="descr_personaje">Personaje que indica en qué modo de pianino estamos</string>
+    <string name="descr_pentagrama">pentagrama</string>
 </resources>

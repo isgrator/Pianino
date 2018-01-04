@@ -16,11 +16,11 @@
             android:defaultValue="true"
             android:key="musicaonoff"
             android:title="@string/musica" />
-        <!--<SwitchPreference
-            android:background="@null"
+        <SwitchPreference
             android:defaultValue="true"
-            android:key="sonidosonoff"
-            android:title="@string/sonido" />-->
+            android:key="modopiano"
+            android:title="@string/modo"
+            />
 
         <ListPreference
 

@@ -26,7 +26,7 @@ public class ConfiguracionFragment extends PreferenceFragment {
     private SharedPreferences pref;
     private SoundPool soundPool;
     private int idError;
-    private SwitchPreference switchMusica;
+    private SwitchPreference switchMusica, switchModo;
 
     //private SwitchPreference switchSonido;
 
@@ -41,8 +41,6 @@ public class ConfiguracionFragment extends PreferenceFragment {
         pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
         nombre = (EditTextPreference) findPreference("nombrejugador");
         nombre.setTitle(pref.getString("nombrejugador",null));
-
-
 
         nombre.setOnPreferenceChangeListener(
                 new Preference.OnPreferenceChangeListener() {
@@ -67,7 +65,6 @@ public class ConfiguracionFragment extends PreferenceFragment {
                     }
                 });
 
-
         switchMusica= (SwitchPreference) findPreference("musicaonoff");
         if (pref.getBoolean("musicaonoff",true)) {
             //Activar música
@@ -90,6 +87,28 @@ public class ConfiguracionFragment extends PreferenceFragment {
                         }else{
                             //Oculta icono
                             switchMusica.setIcon(null);
+                        }
+                        return true;
+                    }
+                });
+
+        switchModo= (SwitchPreference) findPreference("modopiano");
+        if (pref.getBoolean("modopiano",true)) {
+            switchModo.setIcon(getResources().getDrawable(R.drawable.bisillo2));
+        }else{
+            switchModo.setIcon(getResources().getDrawable(R.drawable.icovoz));
+        }
+        switchModo.setOnPreferenceChangeListener(
+                new Preference.OnPreferenceChangeListener() {
+                    @Override
+                    public boolean onPreferenceChange(Preference preference, Object
+                            newValue) {
+                        boolean activado= (boolean)newValue;
+                        if(activado){
+                            switchModo.setIcon(getResources().getDrawable(R.drawable.bisillo2));
+                        }else{
+                            //Oculta icono
+                            switchModo.setIcon(getResources().getDrawable(R.drawable.icovoz));
                         }
                         return true;
                     }

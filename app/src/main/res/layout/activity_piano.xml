@@ -9,18 +9,19 @@
 
 
     <ImageView
-        android:id="@+id/chica"
+        android:id="@+id/personaje"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/descr_personaje"
         app:layout_constraintBottom_toBottomOf="@+id/teclado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="@dimen/chica_horizontal_bias"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pentagrama"
-        app:srcCompat="@drawable/cantante1peq" />
+        app:srcCompat="@drawable/bisillo2" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/teclado"
@@ -31,6 +32,8 @@
         android:layout_marginStart="8dp"
         android:paddingBottom="@dimen/piano_padding_bottom"
         android:paddingEnd="@dimen/piano_padding_end"
+        android:paddingLeft="@dimen/piano_padding_start"
+        android:paddingRight="@dimen/piano_padding_end"
         android:paddingStart="@dimen/piano_padding_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,8 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/tecla_do"
-                android:elevation="0dp"
+                android:background="@drawable/bdo"
                 android:gravity="bottom"
                 android:soundEffectsEnabled="false"
                 android:text="@string/DO"
@@ -71,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/tecla_re"
+                android:background="@drawable/re"
                 android:gravity="bottom"
                 android:soundEffectsEnabled="false"
                 android:text="@string/RE"
@@ -86,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/tecla_mi"
+                android:background="@drawable/mi"
                 android:gravity="bottom"
                 android:soundEffectsEnabled="false"
                 android:text="@string/MI"
@@ -101,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/tecla_fa"
+                android:background="@drawable/fa"
                 android:gravity="bottom"
                 android:soundEffectsEnabled="false"
                 android:text="@string/FA"
@@ -116,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/tecla_sol"
+                android:background="@drawable/sol"
                 android:gravity="bottom"
                 android:soundEffectsEnabled="false"
                 android:text="@string/SOL"
@@ -131,7 +133,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/tecla_la"
+                android:background="@drawable/la"
                 android:gravity="bottom"
                 android:soundEffectsEnabled="false"
                 android:text="@string/LA"
@@ -146,7 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/tecla_si"
+                android:background="@drawable/si"
                 android:gravity="bottom"
                 android:soundEffectsEnabled="false"
                 android:text="@string/SI"
@@ -161,7 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/tecla_do_agudo"
+                android:background="@drawable/do_agudo"
                 android:gravity="bottom"
                 android:soundEffectsEnabled="false"
                 android:text="@string/DO"
@@ -185,6 +187,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/descr_pentagrama"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/guia1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -193,25 +197,120 @@
         app:layout_constraintVertical_bias="0.058"
         app:srcCompat="@drawable/pentagrama" />
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintPentagrama"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/piano_padding_bottom"
+        android:paddingEnd="@dimen/piano_padding_end"
+        android:paddingLeft="@dimen/piano_padding_start"
+        android:paddingRight="@dimen/piano_padding_end"
+        android:paddingStart="@dimen/piano_padding_start"
+        app:layout_constraintBottom_toTopOf="@+id/guia1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_mensajes"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/linearPentagrama"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:scaleY="100%"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.951"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <ImageView
+                android:id="@+id/IV_do"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="false"
+                android:cropToPadding="false"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/do_penta" />
+
+            <ImageView
+                android:id="@+id/IV_re"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/re_penta" />
+
+            <ImageView
+                android:id="@+id/IV_mi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/mi_penta" />
+
+            <ImageView
+                android:id="@+id/IV_fa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/fa_penta" />
+
+            <ImageView
+                android:id="@+id/IV_sol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/sol_penta" />
+
+            <ImageView
+                android:id="@+id/IV_la"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/la_penta" />
+
+            <ImageView
+                android:id="@+id/IV_si"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/si_penta" />
+
+            <ImageView
+                android:id="@+id/IV_do_agudo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/do_agudo_penta" />
+
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
     <TextView
         android:id="@+id/TV_mensajes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:text="TextView"
+        android:layout_marginRight="32dp"
+        android:contentDescription="@string/desc_mensajes"
+        android:text="@string/desc_mensajes"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toEndOf="@+id/menu_piano"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guia1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="@dimen/comienzo_guia1_piano" />
+        app:layout_constraintVertical_bias="0.001" />
 
     <LinearLayout
         android:id="@+id/menu_piano"
@@ -230,12 +329,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
+            android:contentDescription="@string/descr_instrumento_piano"
             android:cropToPadding="false"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/tresillo"
+            app:srcCompat="@drawable/bisillo2"
             tools:layout_editor_absoluteX="852dp"
             tools:layout_editor_absoluteY="397dp" />
 
@@ -244,9 +345,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
+            android:contentDescription="@string/descr_sonido_voz"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/icovoz"
             tools:layout_editor_absoluteX="478dp"
@@ -259,11 +362,19 @@
             android:layout_weight="1"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
+            android:contentDescription="@string/descr_boton_jugar"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/nueva_secuencia"
             tools:layout_editor_absoluteX="1133dp"
             tools:layout_editor_absoluteY="1dp" />
     </LinearLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guia1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/comienzo_guia1_piano" />
 
 
 </android.support.constraint.ConstraintLayout>
