@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="piano_padding_bottom">8dp</dimen>
+    <dimen name="piano_padding_start">80dp</dimen>
+    <dimen name="piano_padding_end">16dp</dimen>
+</resources>
