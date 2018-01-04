@@ -80,9 +80,11 @@ public class Piano extends AppCompatActivity{
                     // Pressed
                     soundPool.play(sonido, 1 ,1 , 0, 0, 1);
                     tecla.setBackground(getResources().getDrawable(fPulsado));
+                    tecla.setTextColor(getResources().getColor(R.color.colorBlanco));
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     // Released
                     tecla.setBackground(getResources().getDrawable(fNormal));
+                    tecla.setTextColor(getResources().getColor(R.color.colorNegro));
                 }
                 return true;
             }

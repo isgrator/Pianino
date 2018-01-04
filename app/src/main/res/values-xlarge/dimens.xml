@@ -11,7 +11,8 @@
     <dimen name="comienzo_guia2_piano">280dp</dimen>
     <dimen name="margen_piano">64dp</dimen>
     <dimen name="piano_padding_bottom">0dp</dimen>
-    <dimen name="piano_padding_start">200dp</dimen>
-    <dimen name="piano_padding_end">16dp</dimen>
+    <dimen name="piano_padding_start">300dp</dimen>
+    <dimen name="piano_padding_end">32dp</dimen>
+    <dimen name="chica_horizontal_bias">0.04</dimen>
 
 </resources>

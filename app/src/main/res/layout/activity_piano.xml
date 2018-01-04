@@ -8,10 +8,25 @@
     tools:context="org.imgt.pianino.Piano">
 
 
+    <ImageView
+        android:id="@+id/chica"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="@+id/teclado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="@dimen/chica_horizontal_bias"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pentagrama"
+        app:srcCompat="@drawable/cantante1peq" />
+
     <android.support.constraint.ConstraintLayout
         android:id="@+id/teclado"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:paddingBottom="@dimen/piano_padding_bottom"
@@ -42,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/tecla_do"
+                android:elevation="0dp"
                 android:gravity="bottom"
                 android:soundEffectsEnabled="false"
                 android:text="@string/DO"
@@ -158,6 +174,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
         </LinearLayout>
+
     </android.support.constraint.ConstraintLayout>
 
     <ImageView
@@ -170,21 +187,22 @@
         android:adjustViewBounds="true"
         app:layout_constraintBottom_toTopOf="@+id/guia1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV_mensajes"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.058"
         app:srcCompat="@drawable/pentagrama" />
 
     <TextView
         android:id="@+id/TV_mensajes"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:text="TextView"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/menu_piano"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -194,6 +212,58 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="@dimen/comienzo_guia1_piano" />
+
+    <LinearLayout
+        android:id="@+id/menu_piano"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/TV_mensajes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/b_pianino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:cropToPadding="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/tresillo"
+            tools:layout_editor_absoluteX="852dp"
+            tools:layout_editor_absoluteY="397dp" />
+
+        <ImageButton
+            android:id="@+id/b_voz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icovoz"
+            tools:layout_editor_absoluteX="478dp"
+            tools:layout_editor_absoluteY="432dp" />
+
+        <ImageButton
+            android:id="@+id/b_jugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/nueva_secuencia"
+            tools:layout_editor_absoluteX="1133dp"
+            tools:layout_editor_absoluteY="1dp" />
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>
