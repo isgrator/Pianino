@@ -28,7 +28,7 @@ public class Principal extends AppCompatActivity{// implements DialogNombre.Comm
 
         holaJugador= findViewById(R.id.TV_hola_jugador);
 
-        //Botones de la pantalla principal
+        //Botones de notala pantalla principal
         b_settings= findViewById(R.id.ico_settings);
         b_settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +45,7 @@ public class Principal extends AppCompatActivity{// implements DialogNombre.Comm
             public void onClick(View view) {
                 Animation pulsarse= AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_boton_pulsado);
                 b_piano.startAnimation(pulsarse);
-                //lanzarPiano(null);
+                lanzarPiano(null);
             }
         });
 
@@ -108,8 +108,8 @@ public class Principal extends AppCompatActivity{// implements DialogNombre.Comm
     }
 
     public void lanzarPiano(View view){
-        //Intent i= new Intent(this, Piano.class);
-        //startActivity(i);
+        Intent i= new Intent(this, Piano.class);
+        startActivity(i);
     }
     public void lanzarAnimales(View view){
         //Intent i= new Intent(this, Animales.class);
@@ -149,7 +149,7 @@ public class Principal extends AppCompatActivity{// implements DialogNombre.Comm
 
     @Override protected void onResume() {
         super.onResume();
-        //Activa o desactiva la música según la configuración guardada
+        //Activa o desactiva notala música según notala configuración guardada
         if (pref.getBoolean("musicaonoff",true)) {
             mp.start();
         }else{

@@ -1,6 +1,5 @@
 package org.imgt.pianino;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.SoundPool;

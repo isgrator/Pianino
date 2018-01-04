@@ -21,4 +21,11 @@
     <string name="cat_juego">Game</string>
     <string name="falta_nombre">Write your name!</string>
     <string name="hola">Hi</string>
+    <string name="DO">DO</string>
+    <string name="RE">RE</string>
+    <string name="MI">MI</string>
+    <string name="FA">FA</string>
+    <string name="SOL">SOL</string>
+    <string name="LA">LA</string>
+    <string name="SI">SI</string>
 </resources>

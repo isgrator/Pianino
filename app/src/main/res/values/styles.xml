@@ -25,10 +25,17 @@
         <item name="android:textSize">@dimen/tamanyo_letra</item>
     </style>
 
-    <!--Estilo para la pantalla de configuración -->
+    <!--Estilo pnotalaa la pantalla de configuración -->
     <style name="TemaConfiguracion" parent="@style/AppTheme2">
         <item name="android:textSize">@dimen/tamanyo_letra_config</item>
         <!--<item name="android:background">@android:color/holo_blue_light</item>-->
+    </style>
+    <!--Estilo pantalla piano-->
+    <style name="EstiloTeclaPiano" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">@dimen/tamanyo_letra_piano</item>
+    </style>
+    <style name="TemaPiano" parent="@style/AppTheme2">
+                <item name="android:buttonStyle">@style/EstiloTeclaPiano</item>
     </style>
 
 </resources>
