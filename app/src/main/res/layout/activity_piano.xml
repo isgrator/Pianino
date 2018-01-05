@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="@dimen/chica_horizontal_bias"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pentagrama"
+        app:layout_constraintTop_toBottomOf="@+id/constraintPentagrama"
         app:srcCompat="@drawable/bisillo2" />
 
     <android.support.constraint.ConstraintLayout
@@ -179,24 +179,6 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/pentagrama"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/descr_pentagrama"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/guia1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_mensajes"
-        app:layout_constraintVertical_bias="0.058"
-        app:srcCompat="@drawable/pentagrama" />
-
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintPentagrama"
         android:layout_width="0dp"
@@ -218,8 +200,8 @@
             android:id="@+id/linearPentagrama"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/penta"
             android:orientation="horizontal"
-            android:scaleY="100%"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.951"
@@ -235,7 +217,7 @@
                 android:adjustViewBounds="false"
                 android:cropToPadding="false"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/do_penta" />
+                app:srcCompat="@drawable/penta" />
 
             <ImageView
                 android:id="@+id/IV_re"
@@ -243,7 +225,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/re_penta" />
+                app:srcCompat="@drawable/penta" />
 
             <ImageView
                 android:id="@+id/IV_mi"
@@ -251,7 +233,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/mi_penta" />
+                app:srcCompat="@drawable/penta" />
 
             <ImageView
                 android:id="@+id/IV_fa"
@@ -259,7 +241,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/fa_penta" />
+                app:srcCompat="@drawable/penta" />
 
             <ImageView
                 android:id="@+id/IV_sol"
@@ -267,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/sol_penta" />
+                app:srcCompat="@drawable/penta" />
 
             <ImageView
                 android:id="@+id/IV_la"
@@ -275,7 +257,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/la_penta" />
+                app:srcCompat="@drawable/penta" />
 
             <ImageView
                 android:id="@+id/IV_si"
@@ -283,7 +265,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/si_penta" />
+                app:srcCompat="@drawable/penta" />
 
             <ImageView
                 android:id="@+id/IV_do_agudo"
@@ -291,7 +273,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/do_agudo_penta" />
+                app:srcCompat="@drawable/penta" />
 
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
