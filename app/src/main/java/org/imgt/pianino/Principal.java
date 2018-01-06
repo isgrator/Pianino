@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Principal extends AppCompatActivity{// implements DialogNombre.Communicator{
+public class Principal extends AppCompatActivity{
 
     SharedPreferences pref;
     ImageView tit_pianino, b_settings,b_piano,b_animales,b_colores,b_puntuaciones;
@@ -48,7 +48,7 @@ public class Principal extends AppCompatActivity{// implements DialogNombre.Comm
                 lanzarPiano(null);
             }
         });
-
+/*
         b_animales= findViewById(R.id.ico_animales);
         b_animales.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +67,7 @@ public class Principal extends AppCompatActivity{// implements DialogNombre.Comm
                 b_colores.startAnimation(pulsarse);
                 //lanzarColores(null);
             }
-        });
+        });*/
 
         b_puntuaciones= findViewById(R.id.ico_scores);
         b_puntuaciones.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +75,7 @@ public class Principal extends AppCompatActivity{// implements DialogNombre.Comm
             public void onClick(View view) {
                 Animation pulsarse= AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_boton_pulsado);
                 b_puntuaciones.startAnimation(pulsarse);
-                //lanzarPuntuaciones(null);
+                lanzarPuntuaciones(null);
             }
         });
 
@@ -90,10 +90,8 @@ public class Principal extends AppCompatActivity{// implements DialogNombre.Comm
         Animation apareceBotonDeDerecha= AnimationUtils.loadAnimation(this, R.anim.anim_boton_desp_izquierda);
         b_settings.startAnimation(apareceBotonDeIzquierda);
         b_piano.startAnimation(apareceBotonDeIzquierda);
-        b_animales.startAnimation(apareceBotonDeAbajo);
-        ImageView chica= findViewById(R.id.chica);
-        chica.startAnimation(apareceBotonDeAbajo);
-        b_colores.startAnimation(apareceBotonDeDerecha);
+        //b_animales.startAnimation(apareceBotonDeAbajo);
+        //b_colores.startAnimation(apareceBotonDeDerecha);
         b_puntuaciones.startAnimation(apareceBotonDeDerecha);
 
         //Recuperamos las preferencias
@@ -122,8 +120,8 @@ public class Principal extends AppCompatActivity{// implements DialogNombre.Comm
         //startActivity(i);
     }
     public void lanzarPuntuaciones(View view){
-        //Intent i= new Intent(this, Puntuaciones.class);
-        //startActivity(i);
+        Intent i= new Intent(this, UltimaPuntuacion.class);
+        startActivity(i);
     }
 
     public void pedirNombre(View view){

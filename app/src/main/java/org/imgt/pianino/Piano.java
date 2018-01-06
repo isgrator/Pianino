@@ -166,7 +166,7 @@ public class Piano extends AppCompatActivity{
                     handler.postDelayed(new Runnable() {
                         public void run() {
                             soundPool.play(idMi, 1 ,1 , 0, 0, 1);
-                            if(solucion) muestraSolucion(bRe,iMi,R.drawable.mi_penta, R.drawable.mi, R.drawable.mi_puls);
+                            if(solucion) muestraSolucion(bMi,iMi,R.drawable.mi_penta, R.drawable.mi, R.drawable.mi_puls);
                         }
                     }, delay);
                     Log.d("nota:","mi");
@@ -274,13 +274,15 @@ public class Piano extends AppCompatActivity{
                     puntuacion += 100;
                 }
             }
+
             int porcentaje= Math.round(aciertos * 100 /nuevaSecuencia.length);
             SharedPreferences.Editor editor=pref.edit();
             editor.putString("puntuacion", String.valueOf(puntuacion));
             editor.putInt("porcentajeAciertos", porcentaje);
             editor.apply();
-            int delay= nuevaSecuencia.length*1000+5000;
+
             final Intent i= new Intent(this, ResultadoJuego.class);
+            int delay= nuevaSecuencia.length*1000+5000;
             handler= new Handler();
             handler.postDelayed(new Runnable() {
                 public void run() {
@@ -288,7 +290,7 @@ public class Piano extends AppCompatActivity{
                 }
             }, delay);
 
-            Toast.makeText(this,getResources().getString(R.string.has_ganado)+" "+ puntuacion+
+            Toast.makeText(this,getResources().getString(R.string.has_ganado)+" "+ puntuacion+" "+
                     getResources().getString(R.string.puntos),Toast.LENGTH_SHORT).show();
 
         }
@@ -321,7 +323,7 @@ public class Piano extends AppCompatActivity{
                 Fondo mientras se pulsa la tecla
         Salida: Escuchador que reacciona al tocar el botón
      */
-    public View.OnTouchListener escuchadorTeclaNota(int idSonido, final Button tecla,ImageView iv,int idNota, int idFondoNormal, int idFondoPulsado){
+    public View.OnTouchListener escuchadorTeclaNota(int idSonido, final Button tecla, ImageView iv, int idNota, int idFondoNormal, int idFondoPulsado, final int codNota){
 
         final int fNormal= idFondoNormal;
         final int fPulsado= idFondoPulsado;
@@ -344,8 +346,8 @@ public class Piano extends AppCompatActivity{
                     if(modoJuego){
                         //Añadir esta nota a la secuencia del jugador
                         notasTocadas++;
-                        Log.d("sonido_tocado","nota "+sonido);
-                        secuenciaJugador[notasTocadas-1]=sonido;
+                        Log.d("sonido_tocado","nota "+codNota);
+                        secuenciaJugador[notasTocadas-1]=codNota;
                             comprobarFinJuego();
 
                     }
@@ -398,13 +400,14 @@ public class Piano extends AppCompatActivity{
 
 
         //Carga de acciones de cambio de apariencia y reprocucción de sonido en cadatecla
-        bDo.setOnTouchListener(escuchadorTeclaNota(idDo, bDo,iDo,R.drawable.do_penta, R.drawable.bdo, R.drawable.bdo_puls));
-        bRe.setOnTouchListener(escuchadorTeclaNota(idRe, bRe,iRe,R.drawable.re_penta, R.drawable.re, R.drawable.re_puls));
-        bMi.setOnTouchListener(escuchadorTeclaNota(idMi, bMi,iMi,R.drawable.mi_penta, R.drawable.mi, R.drawable.mi_puls));
-        bFa.setOnTouchListener(escuchadorTeclaNota(idFa, bFa,iFa,R.drawable.fa_penta, R.drawable.fa, R.drawable.fa_puls));
-        bSol.setOnTouchListener(escuchadorTeclaNota(idSol, bSol,iSol,R.drawable.sol_penta, R.drawable.sol, R.drawable.sol_puls));
-        bLa.setOnTouchListener(escuchadorTeclaNota(idLa, bLa,iLa,R.drawable.la_penta, R.drawable.la, R.drawable.la_puls));
-        bSi.setOnTouchListener(escuchadorTeclaNota(idSi, bSi,iSi,R.drawable.si_penta, R.drawable.si, R.drawable.si_puls));
-        bDoA.setOnTouchListener(escuchadorTeclaNota(idDoA, bDoA,iDoA,R.drawable.do_agudo_penta, R.drawable.do_agudo, R.drawable.do_agudo_pul));
+        bDo.setOnTouchListener(escuchadorTeclaNota(idDo, bDo,iDo,R.drawable.do_penta, R.drawable.bdo, R.drawable.bdo_puls,1));
+        bRe.setOnTouchListener(escuchadorTeclaNota(idRe, bRe,iRe,R.drawable.re_penta, R.drawable.re, R.drawable.re_puls,2));
+        bMi.setOnTouchListener(escuchadorTeclaNota(idMi, bMi,iMi,R.drawable.mi_penta, R.drawable.mi, R.drawable.mi_puls,3));
+        bFa.setOnTouchListener(escuchadorTeclaNota(idFa, bFa,iFa,R.drawable.fa_penta, R.drawable.fa, R.drawable.fa_puls,4));
+        bSol.setOnTouchListener(escuchadorTeclaNota(idSol, bSol,iSol,R.drawable.sol_penta, R.drawable.sol, R.drawable.sol_puls,5));
+        bLa.setOnTouchListener(escuchadorTeclaNota(idLa, bLa,iLa,R.drawable.la_penta, R.drawable.la, R.drawable.la_puls,6));
+        bSi.setOnTouchListener(escuchadorTeclaNota(idSi, bSi,iSi,R.drawable.si_penta, R.drawable.si, R.drawable.si_puls,7));
+        bDoA.setOnTouchListener(escuchadorTeclaNota(idDoA, bDoA,iDoA,R.drawable.do_agudo_penta, R.drawable.do_agudo, R.drawable.do_agudo_pul,8));
     }
+
 }

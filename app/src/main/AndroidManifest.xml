@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_icono_pianino"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_icono_pianino_round"
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/AppTheme2">
@@ -44,7 +44,9 @@
         <activity
             android:name=".ResultadoJuego"
             android:screenOrientation="landscape"
-            android:theme="@style/TemaResultado"></activity>
+            android:theme="@style/TemaResultado" />
+        <activity android:name=".UltimaPuntuacion"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

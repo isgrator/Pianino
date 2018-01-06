@@ -1,5 +1,6 @@
 package org.imgt.pianino;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -8,8 +9,15 @@ import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import java.util.Locale;
 
 public class ResultadoJuego extends AppCompatActivity {
 
@@ -19,18 +27,37 @@ public class ResultadoJuego extends AppCompatActivity {
     private SoundPool soundPool;
     private MediaPlayer mp;
     int idSonido,idMensaje;
+    ImageView b_star;
+    boolean esingles;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado_juego);
 
+        if(Locale.getDefault().getDisplayLanguage().equals("English")) {
+            //Log.d("idioma",Locale.getDefault().getDisplayLanguage());
+            esingles=true;
+        }
         pref = PreferenceManager.getDefaultSharedPreferences(this);
 
         soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
 
         rt= findViewById(R.id.ratingBar);
+        rt.setIsIndicator(true);
         mensaje= findViewById(R.id.TV_resultado);
 
+        b_star= findViewById(R.id.b_star);
+        b_star.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Animation pulsarse= AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_boton_pulsado);
+                b_star.startAnimation(pulsarse);
+                Intent i= new Intent(getApplicationContext(), Principal.class);
+                startActivity(i);
+            }
+        });
 
 
 
@@ -39,42 +66,45 @@ public class ResultadoJuego extends AppCompatActivity {
         switch(estrellas){
             case 1: rt.setRating(1);
                 mensaje.setText(getResources().getString(R.string.uyuyuy));
-                //idSonido = soundPool.load(getApplicationContext(),R.raw.mal_musica,0);
+
                 mp= MediaPlayer.create(this,R.raw.mal_musica);
                 mp.start();
-                idMensaje= soundPool.load(getApplicationContext(),R.raw.mal,0);
+                if(!esingles)
+                    idMensaje= soundPool.load(getApplicationContext(),R.raw.mal,0);
                 break;
             case 2: rt.setRating(2);
                 mensaje.setText(getResources().getString(R.string.uyuyuy));
-                //idSonido = soundPool.load(getApplicationContext(),R.raw.mal_musica,0);
+
                 mp= MediaPlayer.create(this,R.raw.mal_musica);
                 mp.start();
-                idMensaje= soundPool.load(getApplicationContext(),R.raw.mal,0);
+                if(!esingles)
+                    idMensaje= soundPool.load(getApplicationContext(),R.raw.mal,0);
                 break;
             case 3: rt.setRating(3);
                 mensaje.setText(getResources().getString(R.string.regulin));
-                //idSonido = soundPool.load(getApplicationContext(),R.raw.regular_musica,0);
+
                 mp= MediaPlayer.create(this,R.raw.regular_musica);
                 mp.start();
-                idMensaje= soundPool.load(getApplicationContext(),R.raw.regular,0);
+                if(!esingles)
+                    idMensaje= soundPool.load(getApplicationContext(),R.raw.regular,0);
                 break;
             case 4: rt.setRating(4);
                 mensaje.setText(getResources().getString(R.string.bien));
-                //idSonido = soundPool.load(getApplicationContext(),R.raw.bien_musica,0);
+
                 mp= MediaPlayer.create(this,R.raw.bien_musica);
                 mp.start();
-                idMensaje= soundPool.load(getApplicationContext(),R.raw.bien,0);
+                if(!esingles)
+                    idMensaje= soundPool.load(getApplicationContext(),R.raw.bien,0);
                 break;
             case 5: rt.setRating(5);
                 mensaje.setText(getResources().getString(R.string.perfecto));
-                //idSonido = soundPool.load(getApplicationContext(),R.raw.perfecto_musica,0);
                 mp= MediaPlayer.create(this,R.raw.perfecto_musica);
                 mp.start();
-                idMensaje= soundPool.load(getApplicationContext(),R.raw.perfecto,0);
+                if(!esingles)
+                    idMensaje= soundPool.load(getApplicationContext(),R.raw.perfecto,0);
                 break;
             default: rt.setRating(0);
                 mensaje.setText(getResources().getString(R.string.muymal));
-                //idSonido = soundPool.load(getApplicationContext(),R.raw.crash,0);
                 mp= MediaPlayer.create(this,R.raw.crash);
                 mp.start();
 

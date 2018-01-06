@@ -18,7 +18,7 @@
     <string name="modo">Default sound Voice/Piano</string>
     <string name="modo_piano">Piano</string>
     <string name="modo_solfeo">Sol-fa</string>
-    <string name="dificultad">Difficulty</string>
+    <string name="dificultad">Level</string>
     <string name="configuracion">Settings</string>
     <string name="cat_jugador">Player</string>
     <string name="cat_juego">Game</string>
@@ -46,4 +46,6 @@
     <string name="regulin">¡More or less!</string>
     <string name="bien">¡Good!</string>
     <string name="perfecto">¡Perfect!</string>
+    <string name="ultima_puntuacion">Your last score is </string>
+    <string name="no_has_jugado">You have not played yet.</string>
 </resources>

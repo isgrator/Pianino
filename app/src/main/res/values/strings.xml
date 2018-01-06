@@ -46,5 +46,7 @@
     <string name="regulin">¡Regulín!</string>
     <string name="bien">¡Bien!</string>
     <string name="perfecto">¡Perfecto!</string>
+    <string name="ultima_puntuacion">Tienes</string>
+    <string name="no_has_jugado">Aún no has jugado.</string>
 
 </resources>
