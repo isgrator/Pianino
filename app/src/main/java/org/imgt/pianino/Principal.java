@@ -91,6 +91,8 @@ public class Principal extends AppCompatActivity{// implements DialogNombre.Comm
         b_settings.startAnimation(apareceBotonDeIzquierda);
         b_piano.startAnimation(apareceBotonDeIzquierda);
         b_animales.startAnimation(apareceBotonDeAbajo);
+        ImageView chica= findViewById(R.id.chica);
+        chica.startAnimation(apareceBotonDeAbajo);
         b_colores.startAnimation(apareceBotonDeDerecha);
         b_puntuaciones.startAnimation(apareceBotonDeDerecha);
 

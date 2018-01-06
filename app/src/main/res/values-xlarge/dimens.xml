@@ -15,5 +15,9 @@
     <dimen name="piano_padding_start">300dp</dimen>
     <dimen name="piano_padding_end">32dp</dimen>
     <dimen name="chica_horizontal_bias">0.04</dimen>
+    <dimen name="piano_padding_top">80</dimen>
+    <dimen name="piano_juego_margin_vertical">60</dimen>
+    <dimen name="escala_rating">2</dimen>
+    <dimen name="escala_b_star">0.8</dimen>
 
 </resources>

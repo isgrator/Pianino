@@ -37,4 +37,14 @@
     <string name="desc_mensajes">Texto de mensajes</string>
     <string name="descr_personaje">Personaje que indica en qué modo de pianino estamos</string>
     <string name="descr_pentagrama">pentagrama</string>
+    <string name="repite">¡Repite!</string>
+    <string name="solucion">Esta es la solución</string>
+    <string name="has_ganado">Has ganado</string>
+    <string name="puntos">puntos</string>
+    <string name="muymal">Oooooh...</string>
+    <string name="uyuyuy">Uyuyuy...</string>
+    <string name="regulin">¡Regulín!</string>
+    <string name="bien">¡Bien!</string>
+    <string name="perfecto">¡Perfecto!</string>
+
 </resources>

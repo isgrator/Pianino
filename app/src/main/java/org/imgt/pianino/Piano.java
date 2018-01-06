@@ -6,9 +6,12 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.TransitionDrawable;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -17,6 +20,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.lang.reflect.Array;
 
 
 public class Piano extends AppCompatActivity{
@@ -30,11 +36,16 @@ public class Piano extends AppCompatActivity{
     private ImageView personaje;
     private TextView mensaje;
     private boolean modoPiano;
+    private boolean modoJuego;
+    private int notasTocadas;
+    private int nuevaSecuencia[],secuenciaJugador[];
+    private int puntuacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_piano);
 
+        modoJuego=false;
         mensaje=findViewById(R.id.TV_mensajes);
         pref = PreferenceManager.getDefaultSharedPreferences(this);
         personaje= findViewById(R.id.personaje);
@@ -97,6 +108,7 @@ public class Piano extends AppCompatActivity{
                 Animation pulsarse= AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_boton_pulsado);
                 bJugar.startAnimation(pulsarse);
                 lanzarJuegoPianino(null);
+                modoJuego=true;
             }
         });
         //////////////////////////////////////////////////////////////////////////////
@@ -104,11 +116,200 @@ public class Piano extends AppCompatActivity{
 
     }
 
+    public void muestraSolucion(final Button tecla,ImageView iv,int idNota, int idFondoNormal, int idFondoPulsado){
+        //soundPool.play(sonido, 1 ,1 , 0, 0, 1);
+        final int fNormal= idFondoNormal;
+        final int fPulsado= idFondoPulsado;
+        final ImageView ivNota=iv;
+        final int drawableNota=idNota;
+
+        tecla.setBackground(getResources().getDrawable(fPulsado));
+        tecla.setTextColor(getResources().getColor(R.color.colorBlanco));
+        if(!modoPiano)
+            personaje.setImageDrawable(getResources().getDrawable(R.drawable.cantante2peq));
+        ivNota.setImageDrawable(getResources().getDrawable(drawableNota));
+
+    }
+
+    public void reproducirSecuencia(int[] nuevaSecuencia, boolean sol){
+        final boolean solucion=sol;
+        Handler handler = new Handler();
+
+        //Reproducir secuencia
+        for(int i=0;i<nuevaSecuencia.length;i++){
+
+            int delay=i*1000;
+
+            switch(nuevaSecuencia[i]){
+                case 1:
+                    Log.d("nota:","do");
+
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            soundPool.play(idDo, 1 ,1 , 0, 0, 1);
+                            if(solucion) muestraSolucion(bDo,iDo,R.drawable.do_penta, R.drawable.bdo, R.drawable.bdo_puls);
+                        }
+                    }, delay);
+                    break;
+                case 2:
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            soundPool.play(idRe, 1 ,1 , 0, 0, 1);
+                            if(solucion) muestraSolucion(bRe,iRe,R.drawable.re_penta, R.drawable.re, R.drawable.re_puls);
+                        }
+                    }, delay);
+
+                    Log.d("nota:","re");
+                    break;
+                case 3:
+
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            soundPool.play(idMi, 1 ,1 , 0, 0, 1);
+                            if(solucion) muestraSolucion(bRe,iMi,R.drawable.mi_penta, R.drawable.mi, R.drawable.mi_puls);
+                        }
+                    }, delay);
+                    Log.d("nota:","mi");
+                    break;
+                case 4:
+
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            soundPool.play(idFa, 1 ,1 , 0, 0, 1);
+                            if(solucion) muestraSolucion(bFa,iFa,R.drawable.fa_penta, R.drawable.fa, R.drawable.fa_puls);
+                        }
+                    }, delay);
+                    Log.d("nota:","fa");
+                    break;
+                case 5:
+
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            soundPool.play(idSol, 1 ,1 , 0, 0, 1);
+                            if(solucion) muestraSolucion(bSol,iSol,R.drawable.sol_penta, R.drawable.sol, R.drawable.sol_puls);
+                        }
+                    }, delay);
+                    Log.d("nota:","sol");
+                    break;
+                case 6:
+
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            soundPool.play(idLa, 1 ,1 , 0, 0, 1);
+                            if(solucion) muestraSolucion(bLa,iLa,R.drawable.la_penta, R.drawable.la, R.drawable.la_puls);
+                        }
+                    }, delay);
+                    Log.d("nota:","la");
+                    break;
+                case 7:
+
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            soundPool.play(idSi, 1 ,1 , 0, 0, 1);
+                            if(solucion) muestraSolucion(bSi,iSi,R.drawable.si_penta, R.drawable.si, R.drawable.si_puls);
+                        }
+                    }, delay);
+                    Log.d("nota:","si");
+                    break;
+                case 8:
+
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            soundPool.play(idDoA, 1 ,1 , 0, 0, 1);
+                            if(solucion) muestraSolucion(bDoA,iDoA,R.drawable.do_agudo_penta, R.drawable.do_agudo, R.drawable.do_agudo_pul);
+                        }
+                    }, delay);
+                    Log.d("nota:","doAgudo");
+                    break;
+            }
+
+        }
+
+    }
 
     public void lanzarJuegoPianino(View view){
-        Intent i= new Intent(this, JuegoPianino.class);
-        startActivity(i);
+        //Comienza el juego. Reseteamos.
+
+        puntuacion=0;
+        notasTocadas=0;
+        mensaje.setText(R.string.repite);
+        switch(pref.getString("dificultad", "1")){
+            case "0": nuevaSecuencia=generarSecuencia(4);
+                nuevaSecuencia[3]=nuevaSecuencia[0];
+                secuenciaJugador= new int[4];
+                break;
+            case "1": nuevaSecuencia=generarSecuencia(7);
+                nuevaSecuencia[6]=nuevaSecuencia[0];
+                secuenciaJugador= new int[7];
+                break;
+            case "2": nuevaSecuencia=generarSecuencia(10);
+                secuenciaJugador= new int[10];
+                break;
+            default: nuevaSecuencia= new int[7];
+        }
+
+        reproducirSecuencia(nuevaSecuencia,false);
+
     }
+
+    //Método para comprobar si al tocar se ha llegado al final dela secuencia
+    public void comprobarFinJuego() {
+
+        if (notasTocadas == nuevaSecuencia.length) {
+            //reproduce la secuencia esta vez mostrando la solución
+            mensaje.setText(getResources().getString(R.string.solucion));
+            Handler handler= new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    reproducirSecuencia(nuevaSecuencia, true);
+                }
+            }, 4000);
+
+            modoJuego = false;
+            int aciertos=0;
+            //Calcular puntuacion y llevar a la pantalla de puntuaciones. De allí se volverá a la pantalla principal
+            for(int i=0;i<nuevaSecuencia.length;i++){
+                if(nuevaSecuencia[i]==secuenciaJugador[i]){
+                    aciertos++;
+                    puntuacion += 100;
+                }
+            }
+            int porcentaje= Math.round(aciertos * 100 /nuevaSecuencia.length);
+            SharedPreferences.Editor editor=pref.edit();
+            editor.putString("puntuacion", String.valueOf(puntuacion));
+            editor.putInt("porcentajeAciertos", porcentaje);
+            editor.apply();
+            int delay= nuevaSecuencia.length*1000+5000;
+            final Intent i= new Intent(this, ResultadoJuego.class);
+            handler= new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    startActivity(i);
+                }
+            }, delay);
+
+            Toast.makeText(this,getResources().getString(R.string.has_ganado)+" "+ puntuacion+
+                    getResources().getString(R.string.puntos),Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+    //Genera un número aleatorio dentro del rango de números indicado
+    public int randRange(int min, int max){
+        int randomNum= (int) Math.floor(Math.random() * (max - min +1)) + min;
+        return randomNum;
+    }
+
+    //Genera una secuencia aleatoria con la cantidad de notas indicada
+    public int[] generarSecuencia(int cantidad){
+        int secuencia[]= new int[cantidad];
+
+        for(int i=0;i<cantidad;i++){
+            secuencia[i]= randRange(1,8);
+        }
+        return secuencia;
+    }
+
 
 
 
@@ -139,6 +340,15 @@ public class Piano extends AppCompatActivity{
                     if(!modoPiano)
                         personaje.setImageDrawable(getResources().getDrawable(R.drawable.cantante2peq));
                     ivNota.setImageDrawable(getResources().getDrawable(drawableNota));
+
+                    if(modoJuego){
+                        //Añadir esta nota a la secuencia del jugador
+                        notasTocadas++;
+                        Log.d("sonido_tocado","nota "+sonido);
+                        secuenciaJugador[notasTocadas-1]=sonido;
+                            comprobarFinJuego();
+
+                    }
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     // Released

@@ -37,4 +37,13 @@
     <string name="desc_mensajes">Messages box</string>
     <string name="descr_personaje">Character to show current Pianino\'s mode</string>
     <string name="descr_pentagrama">pentagram</string>
+    <string name="repite">Repeat!</string>
+    <string name="solucion">This is the solution</string>
+    <string name="has_ganado">You have earned</string>
+    <string name="puntos">points</string>
+    <string name="muymal">Oooooh...</string>
+    <string name="uyuyuy">Uyuyuy...</string>
+    <string name="regulin">¡More or less!</string>
+    <string name="bien">¡Good!</string>
+    <string name="perfecto">¡Perfect!</string>
 </resources>

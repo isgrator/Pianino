@@ -41,8 +41,10 @@
             android:name=".Piano"
             android:screenOrientation="landscape"
             android:theme="@style/TemaPiano" />
-        <activity android:name=".JuegoPianino"
-            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".ResultadoJuego"
+            android:screenOrientation="landscape"
+            android:theme="@style/TemaResultado"></activity>
     </application>
 
 </manifest>
